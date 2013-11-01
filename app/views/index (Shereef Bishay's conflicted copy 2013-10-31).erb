@@ -1,0 +1,29 @@
+<h1 align="center"> Finish Him! </h1>
+<h2 align= "center"> Blogs about your favorite MK Characters <h2>
+  <div>
+  <h3 align="left"> Current Blog Topics <h3>
+    <ul>
+          <% @posts.each do |post| %> 
+            <li>
+              <a href="/posts/<%=post.id%>"><%= post.title %></a>
+            </li>
+          <% end %>
+  </ul>
+  </div>
+
+    <div>
+      <h3 align="left"> Trending Tags <h3>
+        <ul>
+           <% @tags.each do |tag| %>
+                <li>
+                  <a href='/posts/<%=tag.posts.first.id%>'><%= tag.name %></a>
+                </li>
+
+           <% end %>     
+
+
+
+    </div> 
+  <form action= '/create' method='get'>
+    <input type="submit" value= "Create New Post!"/>
+  </form>

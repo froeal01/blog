@@ -1,0 +1,18 @@
+<h1 align="center"> Edit <%=@title%> </h1>
+
+<form action="/posts/<%= @post.id %>/edit" method="post">
+  
+
+  <label> Title:</label><br>
+  <input name="post[title]" type="text" value="<%=@post.title %>" />
+
+<label> Body:</label><br>
+  <textarea name="post[body]" rows="20"><%=@post.body%> </textarea><br>
+
+  <label>Tags:</label><br>
+    <input name="tag" type="text" value="<%=@post.tags.first.name%>" /><br>
+
+  <input type="submit" value="Edit Post"/>
+</form>
+
+

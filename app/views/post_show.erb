@@ -1,0 +1,24 @@
+<h1 align="center"> <%=@title%> </h1>
+
+<div class="container">
+  <p align= "center">
+    
+      <%= @post.body %><br>
+      <br>
+      <br>
+      <br>
+
+      <% @tags.each do |tag| %>
+        <%= tag.name %>
+      <% end %>  
+
+  </p>
+      <a href="/posts/<%= @post.id%>/edit">Edit Post</a>
+      <a href="/">Return Home</a>
+  
+</div>    
+
+<form action='/delete/<%=@post.id%>' method="post" onSubmit="return confirm('Are you sure you want to delete your post?');">
+  <input type="submit" value="Delete your post">
+</form>  
+

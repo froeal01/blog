@@ -1,0 +1,13 @@
+<form action='/sign_up' method="post">
+    <label for="email">User name</label>
+    <input class="form" type="text" id="email" name="name" ><br>
+    <label for="password">Password</label>
+    <input class="form" type="password" name= "password"><br>
+    <label for "email">Email</label>
+    <input class="form" type="text" name="email"><br>
+    <input class = "submit" type="submit" value="Log-in">
+  </form>
+
+    <%if session[:failed] %>
+   <%= erb :_error%>
+        <% end %>

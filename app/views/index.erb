@@ -1,30 +1,44 @@
-<h1 align="center"> Finish Him! </h1>
-<h2 align= "center"> Blogs about your favorite MK Characters <h2>
-  <div>
-  <h3 align="left"> Current Blog Topics <h3>
-    <ul>
-          <% @posts.each do |post| %> 
-            <li>
-              <a href="/posts/<%=post.id%>"><%= post.title %></a>
-            </li>
-          <% end %>
+<h1 class="welcome"> Welcome back <%= @user.name %> <h1>
+
+<h2 align="center"> Finish Him! </h1>
+<h3 align= "center"> Blogs about your favorite MK Characters </h2>
+<div>
+  <h3 align="left"> Current Blog Topics </h3>
+  <ul>
+    <% @posts.each do |post| %>
+    <li>
+      <a href="/posts/<%=post.id%>"><%= post.title %></a>
+    </li>
+    <% end %>
   </ul>
+</div>
+
+<div>
+  <h3 align="left"> Trending Tags </h3>
+  <ul>
+    <% @tags.each do |tag| %>
+      <% if tag.posts != [] %>
+        <li>
+          <a href='/posts/<%=tag.posts.first.id%>'><%= tag.name %></a>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <h3 align> Your current posts <h3>
+    <ul>
+            <% current_user.posts.each do |post| %>
+                 <a href="/posts/<%=post.id%>"> <li><%= post[:title] %> </li></a>
+                  <% end %>
+     </ul>
   </div>
 
-    <div>
-      <h3 align="left"> Trending Tags <h3>
-        <ul>
-           <% @tags.each do |tag| %>
-                <li>
-                  <% unless tag.posts.empty? %>
-                  <a href='/posts/<%=tag.posts.first.id%>'><%= tag.name %></a>
-                </li>
-                <%end%>
-           <% end %>     
+<form action= '/create' method='get'>
+  <input class="new_window" type="submit" value= "Create New Post!"/>
+</form>
 
-
-
-    </div> 
-  <form action= '/create' method='get'>
-    <input type="submit" value= "Create New Post!"/>
-  </form>
+<form action= '/logout' methods="get">
+    <input class="submit" type="submit" value= "Sign out">
+</form>

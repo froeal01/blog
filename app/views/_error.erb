@@ -1,0 +1,10 @@
+<% if session[:errors] %>
+<div class= "error_explanation">
+  <% errors = session[:errors] %>
+  <ul>
+    <% errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

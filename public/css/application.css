@@ -12,6 +12,57 @@ th {
 
   height:200px;
   font-size:14pt;
-  
+}
+
+.login{
+  padding-right: "112"px;
+
+}
+
+.submit {
+   background-image: -webkit-linear-gradient(top, rgba(242,9,9,1) 37%,rgba(0,0,0,1) 100%);
+   background-image:    -moz-linear-gradient(top, rgba(242,9,9,1) 37%,rgba(0,0,0,1) 100%);
+   background-image:     -ms-linear-gradient(top, rgba(242,9,9,1) 37%,rgba(0,0,0,1) 100%);
+   background-image:      -o-linear-gradient(top, rgba(242,9,9,1) 37%,rgba(0,0,0,1) 100%);
+   background-image:         linear-gradient(top, rgba(242,9,9,1) 37%,rgba(0,0,0,1) 100%);
+   border: solid 3px rgba(0,0,0,1);
+   -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+           border-radius: 10px;
+   display: inline-block;
+   font-size: 17px;
+   line-height: 22px;
+   color: rgba(174,179,14,1);
+}
+
+.submit:hover {
+   background-color: rgba(230,245,17,1);
+   font-size: 14px;
+   color: rgba(0,0,0,1);
+}
+
+.login{
+/*margin: 20px;*/
+border:2px solid;
+border-radius:25px;
+}
+
+.form{
+position:relative;
+}
+.mk{
+  padding-left: 120px;
+  padding-bottom: 50px;
+  height: 50px;
+  width: 50px;
+
+}
+
+.password{
+padding-bottom: 50px;
+}
+
+.post{
+  padding-left: 100px;
 
 }

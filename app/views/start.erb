@@ -1,6 +1,25 @@
+
+<div class="login">
+<fieldset>
 <form action='/' method="post">
-Username: <input name="user_name" type="text" /><br>
-Password: <input type="password" name="password"/>
+<p><label for="username">Username: </login><p>
+  <p><input  class="form" name="user" type="text" required /></p>
+<span class="mk"><img class="mk" src= 'http://piq.codeus.net/static/media/userpics/piq_61192_400x400.png'></span>
+
+<p><label for="password">Password:</label></p>
+
+ <p><input class="form" type="password" name="password" required/></p><br>
+
+    <p><input class="submit" type="submit" value="Log-in"></p>
 </form>
 
-<p> Join the fight for Earth...MORTAAALLL COMBAT </p>
+<% if @login_error == true %>
+      <span> Please re-enter information </span>
+<% end %>
+</fieldset>
+
+<p> Join the fight for Earth...<span class="enter">MORTAAALLL COMBAT</span> </p>
+<form action='/sign_up' method="get">
+	<input class="submit" type="submit" value="Create Fighter">
+</form>
+</div>

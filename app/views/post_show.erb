@@ -2,7 +2,7 @@
 
 <div class="container">
   <p align= "center">
-    
+
       <%= @post.body %><br>
       <br>
       <br>
@@ -10,15 +10,22 @@
 
       <% @tags.each do |tag| %>
         <%= tag.name %>
-      <% end %>  
+      <% end %>
+      </p>
+</div>
 
-  </p>
-      <a href="/posts/<%= @post.id%>/edit">Edit Post</a>
-      <a href="/">Return Home</a>
-  
-</div>    
+    <% if  @post.user_id == session[:id] %>
+<div>
+      <a href="/posts/edit/<%= @post.id %>">Edit Post</a>
+
 
 <form action='/delete/<%=@post.id%>' method="post" onSubmit="return confirm('Are you sure you want to delete your post?');">
   <input type="submit" value="Delete your post">
-</form>  
+</form>
 
+</div>
+<% end %>
+<a href="/index">Return Home</a>
+<form class="post" action= '/logout' methods="get">
+    <input class="submit" type="submit" value= "Sign out">
+</form>

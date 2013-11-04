@@ -11,13 +11,13 @@
   </p>
 
   <form action= "/create" method="post" onSubmit="return confirm('Are you sure you want to submit?');">
-  Title: <input type= "text" name="title"><br>
-  Body:  <input class="body" name="body"><br>
-  Tags:  <input type="text" name="name"><br>   
-         <input type="submit" value="Submit">
+        <label>Title: </label><input class="form" type= "text" name="title"><br>
+          <label> Post: </label><textarea wrap= "virtual" name="body" rows="4" columns="50"></textarea><br>
+          <label>Tags: </label> <input class="form"type="text" name="name"><br>
+         <input class="submit" type="submit" value="Submit">
   </form>
-
-
-
-
 </div>
+
+<form action= '/logout' methods="get">
+    <input class="submit" type="submit" value= "Sign out">
+</form>

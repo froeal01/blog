@@ -1,7 +1,7 @@
 <h1 align="center"> Edit <%=@title%> </h1>
 
 <form action="/posts/<%= @post.id %>/edit" method="post">
-  
+
 
   <label> Title:</label><br>
   <input name="post[title]" type="text" value="<%=@post.title %>" />
@@ -9,10 +9,17 @@
 <label> Body:</label><br>
   <textarea name="post[body]" rows="20"><%=@post.body%> </textarea><br>
 
+
   <label>Tags:</label><br>
-    <input name="tag" type="text" value="<%=@post.tags.first.name%>" /><br>
+    <input name="tag" type="text" value="<%=@post.try(:tags)%>" /><br>
+
+    <!-- look at block method for try -->
+
 
   <input type="submit" value="Edit Post"/>
 </form>
 
 
+<form action= '/logout' methods="get">
+    <input class="submit" type="submit" value= "Sign out">
+</form>

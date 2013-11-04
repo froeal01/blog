@@ -6,8 +6,8 @@ erb :sign_up
 end
 
 post '/' do
-	@user_name = params[:user]
-	@password = params[:password]
+	@user_name = params[:sign_in_username]
+	@password = params[:sign_in_password]
 	@returning_user = User.authenticate(@user_name, @password)
 	if @returning_user
 		session[:id] = User.find_by_name(@user_name)
@@ -18,7 +18,7 @@ post '/' do
 end
 
 post '/sign_up' do
-	@user_new = User.create(name: params[:name],password: params[:password], email: params[:email])
+	@user_new = User.create(name: params[:sign_up_username],password: params[:sign_up_password], email: params[:sign_up_email])
 	@user_id = @user_new.id
 		if @user_id
 			session[:id] = @user_id
@@ -26,7 +26,7 @@ post '/sign_up' do
 		else
 			session[:failed] = true
 			session[:errors] = @user_new.errors
-			redirect to ('/sign_up')
+			redirect to ('/')
 		end
 end
 

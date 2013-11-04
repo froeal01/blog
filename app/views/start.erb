@@ -1,25 +1,64 @@
+<div id="container_start_page">
 
-<div class="login">
-<fieldset>
-<form action='/' method="post">
-<p><label for="username">Username: </login><p>
-  <p><input  class="form" name="user" type="text" required /></p>
-<span class="mk"><img class="mk" src= 'http://piq.codeus.net/static/media/userpics/piq_61192_400x400.png'></span>
+<h1 align="center"> Welcome to the Mortal Kombat Blog </h1>
 
-<p><label for="password">Password:</label></p>
 
- <p><input class="form" type="password" name="password" required/></p><br>
+<body class="start_page">
 
-    <p><input class="submit" type="submit" value="Log-in"></p>
-</form>
+<ul class="top_of_start">
+	<li class="top_of_start"><a href="#sign_in" class="submit front_page">Sign In</a></li>
+	<li class="top_of_start"><a href="#sign_up" class="submit front_page">Sign Up</a></li>
+</ul>
 
-<% if @login_error == true %>
-      <span> Please re-enter information </span>
-<% end %>
-</fieldset>
+<div id="sign_in" class="forms">
+	<h2 align="center">Sign In</h2>
+	<form action='/' method="post" align="center">
+		<p>
+			<label 	for="sign_in_username">Username</label>
+  		<input  id="sign_in_username" name="sign_in_username" type="text" required />
+  	</p>
+  	<p>
+			<label for="sign_in_password">Password</label>
+			<input id="sign_in_password" type="password" name="sign_in_password" required/>
+		</p>
+		<p>
+    	<input class="submit" type="submit" value="Sign In"></p>
+    </p>
+  </form>
+</div>  
 
-<p> Join the fight for Earth...<span class="enter">MORTAAALLL COMBAT</span> </p>
-<form action='/sign_up' method="get">
-	<input class="submit" type="submit" value="Create Fighter">
-</form>
+
+<div id="sign_up" class="forms">
+	<h2 align="center">Sign Up</h2>
+		<form action='/sign_up' method="post" align="center">
+		<p>
+    	<label for="sign_up_username">Username</label>
+    	<input id="sign_up_usernaname" type="text" name="sign_up_username"/>
+    </p>
+    <p>
+    	<label for="sign_up_password">Password</label>
+    	<input id="sign_up_password" type="password" name= "sign_up_password"/>
+    </p>
+    <p>
+    	<label for="sign_up_confirmation">Confirm Password</label>
+    	<input id="sign_up_confirmation" type="password" name="sign_up_confirmation"/><span></span>
+    </p>
+    <p>
+    	<label for "sign_up_email">Email</label>
+    	<input id="sign_up_email" type="text" name="sign_up_email"/>
+    </p>
+    <p>
+    <input class = "submit" type="submit" value="Log-in">
+  	</p>
+  </form>
+	<%if session[:failed] %>
+  	<%= erb :_error%>
+  <% end %>
+</div>
+
+
+
+<img class="mk" src= 'http://piq.codeus.net/static/media/userpics/piq_61192_400x400.png'>
+
+</body>
 </div>

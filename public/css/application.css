@@ -1,9 +1,37 @@
+#container_start_page{
+  margin: 20px auto;
+  width: 1000px;
+  height: 1000px;
+  padding: 0px 20px 20px 20px;
+  border: 1px solid black;
+}
+
+
+
+
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
+
+ul, p, h2, h1 {
+  font-family: Arial, "MS Trebuchet", sans-serif;
+  padding: 10px;
+}
+
+input.error {
+  border: 5px solid #f00;
+}
+
+label {
+  width: 200px;
+  display: inline-block;
+}
+
+
 th {
   text-align: left;
 }
@@ -41,28 +69,39 @@ th {
    color: rgba(0,0,0,1);
 }
 
-.login{
-/*margin: 20px;*/
-border:2px solid;
-border-radius:25px;
-}
 
-.form{
-position:relative;
-}
-.mk{
-  padding-left: 120px;
-  padding-bottom: 50px;
-  height: 50px;
-  width: 50px;
+.top_of_start{
+
+  display:inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 175px;
 
 }
 
-.password{
-padding-bottom: 50px;
+
+ul.validation_error{
+  display:inline-block;
+  /*list-style-image: url('http://fc00.deviantart.net/fs71/f/2011/176/4/1/8_bit_mk_classic_raiden_by_lpugh-d3k0jaq.png') 50px;*/
+  height: 25px;
+  width: 25pxß;
 }
 
-.post{
-  padding-left: 100px;
+li.validation_error{
 
+  margin-left: auto;
+  margin-right: auto;
+  
 }
+
+img.mk{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75px;
+  width: 75px;
+  position: relative;
+}
+
+

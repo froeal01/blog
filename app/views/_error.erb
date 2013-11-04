@@ -1,9 +1,9 @@
 <% if session[:errors] %>
-<div class= "error_explanation">
+<div class= "error_explanation" align= "center">
   <% errors = session[:errors] %>
-  <ul>
+  <ul class="validation_error">
     <% errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+    <li class="validation_error"><%= msg %></li>
     <% end %>
   </ul>
 </div>
